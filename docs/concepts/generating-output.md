@@ -1,7 +1,7 @@
 # Generating output
 
 The primary goal of the QuestPDF library is to generate PDF files. 
-However, it also supports other output formats such as XPS, SVG and images.
+However, it also supports other output formats such as SVG and images.
 
 ::: warning
 Please be aware that certain features may not be available on formats other than PDF.
@@ -31,27 +31,6 @@ var byteArray = document.GeneratePdf();
 using var stream = new FileStream("document.pdf", FileMode.Create);
 document.GeneratePdf(stream);
 ```
-
-
-## Generating XPS files
-
-The library also supports generating XPS files:
-
-```csharp
-// generate XPS and save it to a file
-document.GenerateXps("document.xps");
-
-// generate XPS and return it as a byte array
-var byteArray = document.GenerateXps();
-
-// generate XPS and save it to a stream
-using var stream = new FileStream("document.xps", FileMode.Create);
-document.GenerateXps(stream);
-```
-
-::: warning
-Please note that generating XPS files is only supported on Windows operating systems.
-:::
 
 
 ## Generating SVG files
