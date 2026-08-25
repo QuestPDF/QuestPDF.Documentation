@@ -33,27 +33,6 @@ document.GeneratePdf(stream);
 ```
 
 
-## Generating XPS files
-
-The library also supports generating XPS files:
-
-```csharp
-// generate XPS and save it to a file
-document.GenerateXps("document.xps");
-
-// generate XPS and return it as a byte array
-var byteArray = document.GenerateXps();
-
-// generate XPS and save it to a stream
-using var stream = new FileStream("document.xps", FileMode.Create);
-document.GenerateXps(stream);
-```
-
-::: warning
-Please note that generating XPS files is only supported on Windows operating systems.
-:::
-
-
 ## Generating SVG files
 
 The library also supports generating SVG files.
