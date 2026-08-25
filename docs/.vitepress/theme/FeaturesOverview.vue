@@ -166,7 +166,7 @@ const categories = [
       {
         icon: "fa-regular fa-file-export",
         name: "Output Types",
-        description: "Generate PDF, XPS, SVG, or raster images (PNG, JPEG, WEBP). Save to file, stream, or byte array for flexible integration.",
+        description: "Generate PDF, SVG, or raster images (PNG, JPEG, WEBP). Save to file, stream, or byte array for flexible integration.",
         link: "/concepts/generating-output.html"
       },
       {
