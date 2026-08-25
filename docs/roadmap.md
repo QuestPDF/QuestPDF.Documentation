@@ -40,7 +40,7 @@ Future development plans include:
 
 - **PDF signing with X.509 certificates.** Built-in support for digitally signing documents using `X509Certificate` certificates. Digital signatures provide authenticity and tamper-evidence — a common requirement for contracts, invoices, and official documents across finance, legal, and government.
 
-- **Further performance and resource-efficiency improvements.** Continued, deliberate investigation into generation speed alongside CPU and memory usage, with the goal of pushing throughput higher and resource consumption lower. This matters most for high-volume, latency-sensitive, and cost-conscious workloads running at scale.
+- **Continued performance and resource-efficiency work.** Building on the parallelism and allocation improvements already shipped, with ongoing investigation into generation speed alongside CPU and memory usage. This matters most for high-volume, latency-sensitive, and cost-conscious workloads running at scale.
 
 - **Basic AcroForm support.** Programmatic creation of interactive form fields — text inputs, checkboxes, and similar controls — along with the ability to read submitted values back from existing form documents. This opens up fillable PDFs for use cases such as applications, surveys, and onboarding paperwork, and enables automated data capture from completed forms.
 
@@ -50,6 +50,8 @@ Future development plans include:
 ## Recently delivered
 
 QuestPDF is under active, continuous development. A selection of recent milestones:
+
+- **Significantly improved performance, parallelism, and resource efficiency.** Documents generate 15% faster, allocate around 85% less memory, and scale across all available CPU cores rather than plateauing after a handful of threads — roughly 4x better parallel scaling. Text-heavy documents benefit in particular, alongside better font caching and substantially reduced locking. No code changes are required — existing documents gain these improvements simply by upgrading the package.
 
 - **Enterprise-ready licensing and documentation.** Substantially revised legal documents to better support enterprise procurement and compliance requirements.
 
