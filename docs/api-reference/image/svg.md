@@ -17,6 +17,26 @@ container.Svg(svgContent);
 container.Svg("pdf-icon.svg")
 ```
 
+::: details How to fix **FileNotFoundException**
+When loading files using relative paths, please ensure that your files are published along with your application, so it can load them during runtime. The recommended approach is to configure the file to be copied to the build output directory. It can be done by adding the following configuration to your `.csproj` file:
+
+```xml
+<ItemGroup>
+    <None Update="assets/pdf-icon.svg" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+```
+
+You can also target an entire folder:
+
+```xml
+<ItemGroup>
+    <None Update="assets/**" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+```
+
+The same setting is also available via the GUI in your preferred IDE.
+:::
+
 :::tip
 SVG content supports the same scaling options as raster images. [Learn more](/api-reference/image/basics.html#image-scaling)
 
