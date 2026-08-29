@@ -21,6 +21,26 @@ using var stream = new FileStream("logo.png", FileMode.Open);
 container.Image(stream);
 ```
 
+::: details How to fix **FileNotFoundException**
+When loading files using relative paths, please ensure that your files are published along with your application, so it can load them during runtime. The recommended approach is to configure the file to be copied to the build output directory. It can be done by adding the following configuration to your `.csproj` file:
+
+```xml
+<ItemGroup>
+    <None Update="assets/logo.png" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+```
+
+You can also target an entire folder:
+
+```xml
+<ItemGroup>
+    <None Update="assets/**" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+```
+
+The same setting is also available via the GUI in your preferred IDE.
+:::
+
 ::: tip
 Please note that there is a significant difference between image resolution (number of pixels vertically and horizontally) and its physical size described in points.
 Therefore, the resolution of an image is not used for determining its physical size on the document.
