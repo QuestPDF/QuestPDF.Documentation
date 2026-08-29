@@ -429,3 +429,30 @@ Let's analyze the `StandardLigatures` font feature, which replaces specific pair
 ```
 
 ![example](/api-reference/text-font-features.webp)
+
+
+## Break Anywhere
+
+Allows a line to break between any two characters, not only at word boundaries such as spaces or hyphens.
+
+With this setting enabled, lines are filled as fully as possible, at the cost of splitting words at arbitrary positions without hyphenation.
+
+It is useful for content without natural break points, such as long URLs, identifiers, hashes, or file paths, especially in narrow columns. For regular prose, prefer the default behavior.
+
+```csharp
+.Column(column =>
+{
+    column.Spacing(20);
+
+    column.Item()
+        .Background(Colors.Grey.Lighten3)
+        .Text("https://www.questpdf.com/api-reference/text/font-management.html#manual-font-registration");
+
+    column.Item()
+        .Background(Colors.Grey.Lighten3)
+        .Text("https://www.questpdf.com/api-reference/text/font-management.html#manual-font-registration")
+        .BreakAnywhere();
+});
+```
+
+![example](/api-reference/text-break-anywhere.webp)
