@@ -374,6 +374,34 @@ The adjustment is proportional to the text size.
 ![example](/api-reference/text-word-spacing.webp)
 
 
+## Hyphenation
+
+QuestPDF supports hyphenation by breaking words at soft hyphen characters `U+00AD` and rendering a hyphen at the break.
+
+It does not hyphenate text automatically. Please use a dedicated hyphenation library to insert soft hyphens for you.
+
+A soft hyphen is invisible and is rendered only when the line actually breaks at that position. This behavior is always enabled and requires no configuration.
+
+```csharp
+.Column(column =>
+{
+    column.Spacing(20);
+
+    column.Item()
+        .Background(Colors.Grey.Lighten3)
+        .Text("Bitte aktualisieren Sie die Zugriffsberechtigungen in der Serverkonfigurationsdatei.");
+
+    column.Item()
+        .Background(Colors.Grey.Lighten3)
+        .Text("Bit\u00ADte ak\u00ADtua\u00ADli\u00ADsie\u00ADren Sie die " +
+              "Zu\u00ADgriffs\u00ADbe\u00ADrech\u00ADti\u00ADgun\u00ADgen in der " +
+              "Ser\u00ADver\u00ADkon\u00ADfi\u00ADgu\u00ADra\u00ADti\u00ADons\u00ADda\u00ADtei.");
+});
+```
+
+![example](/api-reference/text-hyphenation.webp)
+
+
 ## Font Features
 
 Font features are a set of typographic features that can be applied to text to enhance its appearance. 
