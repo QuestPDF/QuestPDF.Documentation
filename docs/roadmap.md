@@ -8,9 +8,9 @@ This roadmap is a living document. Because we prioritize quality over rigid dead
 
 What we're actively building right now.
 
-- **Support for more platforms and languages.** Foundational work is underway to bring the QuestPDF API to runtimes and languages beyond .NET, so more teams can rely on the same document engine regardless of their technology stack.
+- **New layout elements, options, and enhancements.** Ongoing expansion of the layout engine with new elements, richer configuration options, and refinements to existing components. A broader, more expressive set of building blocks means fewer custom workarounds and more document designs that can be described directly and cleanly in code.
 
-- **Native AOT compilation support.** Full compatibility with .NET Native AOT. AOT compilation delivers faster startup times, smaller self-contained deployments, and a lower memory footprint — increasingly important for serverless functions, containerized services, and high-density cloud workloads. This removes a key adoption barrier for teams standardizing on AOT-first architectures.
+- **Support for more platforms and languages.** Foundational work is underway to bring the QuestPDF API to runtimes and languages beyond .NET, so more teams can rely on the same document engine regardless of their technology stack.
 
 - **Introductory video and learning materials.** A concise video walkthrough of QuestPDF fundamentals, from your first document to real-world layouts. The goal is to shorten the path from evaluation to productive use — particularly for developers and teams adopting the library for the first time.
 
@@ -20,8 +20,6 @@ What we're actively building right now.
 Confirmed direction for upcoming releases. These items are planned and prioritized; exact timing depends on scope and dependencies.
 
 - **Sample gallery with ready-to-use code.** A curated gallery of copy-and-paste code samples covering the most common document types — invoices, reports, certificates, and more — with complete, working implementations. Less boilerplate, faster implementation, and a proven starting point instead of a blank page.
-
-- **New layout elements, options, and enhancements.** Ongoing expansion of the layout engine with new elements, richer configuration options, and refinements to existing components. A broader, more expressive set of building blocks means fewer custom workarounds and more document designs that can be described directly and cleanly in code.
 
 - **Expanded and improved documentation.** Continued investment in documentation: broader coverage, clearer explanations, more end-to-end examples, and deeper guidance for advanced scenarios. Strong documentation lowers onboarding cost and reduces day-to-day friction for every team using QuestPDF.
 
@@ -52,6 +50,8 @@ Future development plans include:
 QuestPDF is under active, continuous development. A selection of recent milestones:
 
 - **Significantly improved performance, parallelism, and resource efficiency.** Documents generate 15% faster, allocate around 85% less memory, and scale across all available CPU cores rather than plateauing after a handful of threads — roughly 4x better parallel scaling. Text-heavy documents benefit in particular, alongside better font caching and substantially reduced locking. No code changes are required — existing documents gain these improvements simply by upgrading the package.
+
+- **Native AOT compilation support.** Full compatibility with .NET Native AOT. AOT compilation delivers faster startup times, smaller self-contained deployments, and a lower memory footprint — increasingly important for serverless functions, containerized services, and high-density cloud workloads. This removes a key adoption barrier for teams standardizing on AOT-first architectures.
 
 - **Enterprise-ready licensing and documentation.** Substantially revised legal documents to better support enterprise procurement and compliance requirements.
 
